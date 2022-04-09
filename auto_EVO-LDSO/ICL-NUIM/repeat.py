@@ -12,14 +12,14 @@ import time
 import subprocess
 
 
-dataset_Path=sys.argv[1]
-data_Names=os.listdir(dataset_Path)
-data_Names.sort()
+
+
+
 result_Path={}
 times = 0
-dataset_size=len(data_Names)
+dataset_size=len(folder_Names)
 for i in range( 0, dataset_size ):
-    result_Path[i]="./Results/"+data_Names[i]
+    result_Path[i]="./Results/"+folder_Names[i]
     if not os.path.exists(result_Path[i]):
         os.system("mkdir "+result_Path[i])
     if not ( os.path.exists(result_Path[i]+"/groundtruth.txt") ):
@@ -29,8 +29,8 @@ for i in range( 0, dataset_size ):
 
 data_Paths={}
 for i in range(0, dataset_size ):
-    print(data_Names[i]+":")
-    data_Paths[i]=dataset_Path+"/"+data_Names[i]
+    print(folder_Names[i]+":")
+    data_Paths[i]=dataset_Path+"/"+folder_Names[i]
     data_times=open( result_Path[i] + "/times_used.txt","r")
     times = int( data_times.readlines()[0] )
     data_times.close()
