@@ -34,8 +34,6 @@ for i in range( 0, dataset_size ):
         print(times ,file=data_times)
         data_times.close()
 
-
-
 data_Paths={}
 for i in range(0, dataset_size ):
     print(folder_Names[i]+":")
@@ -53,6 +51,5 @@ for i in range(0, dataset_size ):
     print(str(times),file=data_times)
     time.sleep(5)
     data_times.close()
-    
 
 #python3 repeat.py ~/dataset/Tum/folders

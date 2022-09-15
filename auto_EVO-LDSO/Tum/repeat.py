@@ -1,15 +1,11 @@
 from ctypes import sizeof
 from email.policy import default
-from pickle import NONE
 import pprint
-from unittest import result
 import numpy as np
 import os
-
-#第一步先通过sys这个模块来添加evo的地址，再import evo
-import sys
 import time
-import subprocess
+import sys
+import evo_Tum
 
 
 dataset_Path=sys.argv[1]
@@ -48,7 +44,7 @@ for i in range(0, dataset_size ):
     data_times.close()
     while not ( os.path.exists( result_Path[i]+"/KeyFrameTrajectory10.txt" ) ):
         times+=1
-        os.system( "python3 evo_Tum.py "+ data_Paths[i] )
+	evo_Tum.evo_data(data_Paths[i],10)
         print(times)
         time.sleep(5)
         
