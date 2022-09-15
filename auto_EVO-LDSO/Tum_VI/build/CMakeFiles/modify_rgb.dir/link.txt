@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall   -O3 -std=c++11 -fopenmp  -rdynamic CMakeFiles/modify_rgb.dir/src/modify_rgb.cc.o  -o ../modify_rgb  -L/usr/local/share/colmap/../../lib/colmap 

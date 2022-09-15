@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall   -O3 -std=c++11 -fopenmp  -rdynamic CMakeFiles/modify_Spaces.dir/src/modify_Spaces.cc.o  -o ../modify_Spaces  -L/usr/local/share/colmap/../../lib/colmap 

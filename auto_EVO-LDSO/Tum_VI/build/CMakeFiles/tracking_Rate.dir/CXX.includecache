@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/changfei/whelan_ws/src/auto_EVO-LDSO/auto_EVO-LDSO/Tum/src/tracking_Rate.cc
+iostream
+-
+fstream
+-
+vector
+-
+sstream
+-
+iomanip
+-
+
