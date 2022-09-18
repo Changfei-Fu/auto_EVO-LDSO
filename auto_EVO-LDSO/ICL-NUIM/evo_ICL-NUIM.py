@@ -239,6 +239,6 @@ def evo_data(data_Path,times):#输入某个数据集地址
 
     
     
-#data_Path=sys.argv[1]
-#evo_data(data_Path,10)
+data_Path=sys.argv[1]
+evo_data(data_Path,10)
 #python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders/data_Path

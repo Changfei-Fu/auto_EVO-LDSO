@@ -31,7 +31,13 @@ def kft_Gen(data_Path,Index):
         ldso_preset="preset=0"
         Tum_files=data_Path
 
-        cmd = ldso+" "+ldso_preset+" files="+Tum_files
+
+
+        cmd = ldso+" "+ldso_preset+" files="+Tum_files \
+	+"vignette=data_Path/dso/cam0/vignette.png" \
+	+"calib=data_Path/dso/cam0/camera.txt" \
+	+"gamma=data_Path/dso/cam0/pcalib.txt"
+
 
         time1=time.time()
         os.system(cmd)

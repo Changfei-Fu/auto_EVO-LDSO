@@ -27,7 +27,7 @@ using namespace ldso;
 
 std::string source = "/home/xiang/Dataset/EUROC/MH_01_easy/cam0";
 std::string output_file = "./results.txt";
-std::string calib = "../../LDSO/examples/EUROC/EUROC.txt";
+std::string calib = "../../LDSO/examples/EUROC/camera.txt";
 std::string vocPath = "../../LDSO/vocab/orbvoc.dbow3";
 
 int startIdx = 0;
@@ -429,9 +429,8 @@ int main(int argc, char **argv) {
             tmlog.close();
         }
     });
-
-    //if (viewer)
-        //viewer->run();  // mac os should keep this in main thread.
+//    if (viewer)
+//        viewer->run();  // mac os should keep this in main thread.
 
     runthread.join();
 

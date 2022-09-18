@@ -205,8 +205,8 @@ def evo_data(data_Path,times):#输入某个数据集地址
     data.close()
 
 
-#data_Path=sys.argv[1]
-#evo_data(data_Path,10)
+data_Path=sys.argv[1]
+evo_data(data_Path,10)
 #python3 evo_EuRoc.py ~/dataset/EuRoc/folders
 #argv[1]输入dataset的目录，该程序会读取文件夹内全部sequence文件夹的地址，对每个sequence执行evo_data
 #在evo_data函数中，先检测并创建：

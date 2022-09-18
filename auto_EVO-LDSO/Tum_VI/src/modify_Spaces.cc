@@ -24,7 +24,7 @@ int change_datacsv(const string &srcFile, vector<string> &lines, int precision){
             vector<long double> t(8);
             for(int i=0;i<8;i++){
                 ss>>t[i];
-            }t[0]*=1e9;
+            }
             ss.str("");
             ss.clear();
             for(int i=0;i<7;i++){
