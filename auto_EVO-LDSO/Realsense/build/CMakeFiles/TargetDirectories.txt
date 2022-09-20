@@ -1,4 +1,0 @@
-/home/changfei/whelan_ws/src/auto_EVO-LDSO/auto_EVO-LDSO/Realsense/build/CMakeFiles/rebuild_cache.dir
-/home/changfei/whelan_ws/src/auto_EVO-LDSO/auto_EVO-LDSO/Realsense/build/CMakeFiles/edit_cache.dir
-/home/changfei/whelan_ws/src/auto_EVO-LDSO/auto_EVO-LDSO/Realsense/build/CMakeFiles/tracking_Rate.dir
-/home/changfei/whelan_ws/src/auto_EVO-LDSO/auto_EVO-LDSO/Realsense/build/CMakeFiles/modify_Spaces.dir

@@ -29,11 +29,11 @@ def kft_Gen(data_Path,Index):
         ldso_Path="../../LDSO"
         ldso=ldso_Path + "/bin/evo_dso_euroc"
         ldso_preset="preset=0"
-        Tum_files=data_Path+"/cam0"
+        Euroc_files=data_Path+"/cam0"
 
 
 
-        cmd = ldso+" "+ldso_preset+" files="+Tum_files \
+        cmd = ldso+" "+ldso_preset+" files="+Euroc_files \
 	    +" vignette="+data_Path+"/cam0/vignette.png" \
 	    +" calib="+data_Path+"/cam0/camera.txt" \
 	    +" gamma="+data_Path+"/cam0/pcalib.txt"
