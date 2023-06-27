@@ -10,7 +10,7 @@ import os
 import sys
 import time
 import subprocess
-from evo_Tum import evo_data
+#from evo_Tum import evo_data
 
 dataset_Path=sys.argv[1]
 data_Name=os.listdir(dataset_Path)
@@ -22,16 +22,19 @@ for i in range(0,len(data_Name)):
         folder_Names[i]=data_Name[i]
 
 data_path={}
-for i in range(0,len(folder_Names)):
-    print(folder_Names[i]+":")
-    data_path[i]=dataset_Path+"/"+folder_Names[i]
-    evo_data(data_path[i],10)
+
+#for i in range(1,len(folder_Names)):
+#    print(folder_Names[i])
+#    data_path[i]=dataset_Path+"/"+folder_Names[i]
+#    evo_data(data_path[i],10)
+
+print(folder_Names)
 
 result_Path={}
 times = 0
 dataset_size=len(folder_Names)
 for i in range( 0, dataset_size ):
-    result_Path[i]="./Results/"+folder_Names[i]
+    result_Path[i]="./Results/"+folder_Names[i+1]
     if not os.path.exists(result_Path[i]):
         os.system("mkdir "+result_Path[i])
     if not ( os.path.exists(result_Path[i]+"/groundtruth.txt") ):
@@ -41,8 +44,9 @@ for i in range( 0, dataset_size ):
 
 data_Paths={}
 for i in range(0, dataset_size ):
-    print(folder_Names[i]+":")
-    data_Paths[i]=dataset_Path+"/"+folder_Names[i]
+    print(folder_Names[i+1]+":")
+    data_Paths[i]=dataset_Path+"/"+folder_Names[i+1]
+    print(data_Paths[i]+":")
     data_times=open( result_Path[i] + "/times_used.txt","r")
     times = int( data_times.readlines()[0] )
     data_times.close()

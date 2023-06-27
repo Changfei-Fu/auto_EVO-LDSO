@@ -29,14 +29,16 @@ def kft_Gen(data_Path,Index):
         ldso_Path="../../LDSO"
         ldso=ldso_Path + "/bin/evo_dso_tum"
         ldso_preset="preset=0"
+        ldso_mode="mode=2"
         Tum_files=data_Path
 
 
 
-        cmd = ldso+" "+ldso_preset+" files="+Tum_files \
-	+"vignette=data_Path/dso/cam0/vignette.png" \
-	+"calib=data_Path/dso/cam0/camera.txt" \
-	+"gamma=data_Path/dso/cam0/pcalib.txt"
+        cmd = ldso+" "+ldso_preset+ldso_mode+" files="+Tum_files \
+	    +" calib="+data_Path+"/camera.txt" \
+        +" gamma="+data_Path+"/pcalib.txt" \
+        #+" vignette="+data_Path+"/vignette.png" \
+
 
 
         time1=time.time()
@@ -141,9 +143,11 @@ def evo_data(data_Path,times):#输入某个数据集地址
             os.system("mkdir build")
         os.system('sh ./build.sh')
 
+
+
     for k in range(0,5):
         if data_Name.find("freiburg"+str(k)) > 0:
-            os.system("cp sensor"+str(k)+".yaml "+data_Path+"/sensor.yaml")
+            os.system("cp ../../LDSO/examples/Tum/Tum"+str(k)+".txt "+data_Path+"/camera.txt")
 
     if not os.path.exists('./Results'):
         os.system("mkdir ./Results")
@@ -229,6 +233,8 @@ def evo_data(data_Path,times):#输入某个数据集地址
 
 data_Path=sys.argv[1]
 evo_data(data_Path,10)
+
+
 #python3 evo_Tum.py ~/dataset/Tum/folders/data_Path
 #argv[1]输入dataset的目录，该程序会读取文件夹内全部sequence文件夹的地址，对每个sequence执行evo_data
 #在evo_data函数中，先检测并创建：
