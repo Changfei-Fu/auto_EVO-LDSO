@@ -26,10 +26,13 @@ def kft_Gen(data_Path,Index):
     if not os.path.exists(results_Path+'/KeyFrameTrajectory'+str(Index)+'.txt'): 
         ldso_Path="../../LDSO"
         ldso=ldso_Path + "/bin/evo_dso_tum"
-        ldso_preset="preset=0"
+        ldso_preset="preset=0"#default settings (2k pts etc.), not enforcing real-time execution
+        ldso_mode="mode=1"#use iff NO photometric calibration exists
         Tum_files=data_Path
 
-        cmd = ldso+" "+ldso_preset+" files="+Tum_files
+        cmd = ldso+" "+ldso_preset+ldso_mode+" files="+Tum_files \
+        +" calib="+data_Path+"/camera.txt" \
+        #+" gamma="+data_Path+"/pcalib.txt" \
 
         time1=time.time()
         os.system(cmd)
@@ -140,7 +143,8 @@ def evo_data(data_Path,times):#输入某个数据集地址
             os.system("mkdir build")
         os.system('sh ./build.sh')
 
-    os.system("cp ICL-NUIM.yaml "+data_Path+"/sensor.yaml")
+    os.system("cp ../../LDSO/examples/ICL-NUIM/ICL.txt "+data_Path+"/camera.txt")
+
 
     if not os.path.exists("./Results"):
         os.system("mkdir ./Results")
@@ -234,7 +238,7 @@ def evo_data(data_Path,times):#输入某个数据集地址
     print("stderr_time = "+str(stderr_time),file=data)
     data.close()
 
-    os.system("rm "+data_Path+"/sensor.yaml "+data_Path+"/data.csv")
+    os.system("rm "+data_Path+"/camera.txt "+data_Path+"/data.csv")
     os.system("mv "+data_Path+"/data "+data_Path+"/rgb")
 
     

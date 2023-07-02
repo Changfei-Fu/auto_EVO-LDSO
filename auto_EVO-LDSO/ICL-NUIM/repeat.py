@@ -12,7 +12,14 @@ import time
 import subprocess
 
 
-
+dataset_Path=sys.argv[1]
+data_Name=os.listdir(dataset_Path)
+data_Name.sort()
+folder_Names={}
+for i in range(0,len(data_Name)):
+    if os.path.isdir(dataset_Path+"/"+data_Name[i]):
+        folder_Names[i]=data_Name[i]
+print(folder_Names)
 
 
 result_Path={}
