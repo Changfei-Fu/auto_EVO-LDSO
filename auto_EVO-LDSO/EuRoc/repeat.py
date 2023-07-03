@@ -9,7 +9,7 @@ import sys
 import time
 import subprocess
 
-#from evo_EuRoc import evo_data
+from evo_EuRoc import evo_data
 
 dataset_Path=sys.argv[1]
 data_Name=os.listdir(dataset_Path)
@@ -47,7 +47,7 @@ for i in range(0, dataset_size ):
     data_times.close()
     while not ( os.path.exists( result_Path[i]+"/KeyFrameTrajectory10.txt" ) ):
         times+=1
-        os.system( "python3 evo_EuRoc.py "+ data_Paths[i] )
+        evo_data(data_paths[i],10)
         print(times)
         time.sleep(5)
         

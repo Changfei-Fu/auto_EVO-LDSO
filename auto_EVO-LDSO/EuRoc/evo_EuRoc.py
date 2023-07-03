@@ -26,12 +26,10 @@ def kft_Gen(data_Path,Index):
     if not os.path.exists(results_Path+"/KeyFrameTrajectory"+str(Index)+".txt"):
         ldso_Path="../../LDSO"
         ldso=ldso_Path + "/bin/evo_dso_euroc"
-        ldso_preset=" preset=0"#default settings (2k pts etc.), not enforcing real-time execution
-        ldso_mode=" mode=1"#use iff NO photometric calibration exists
+        ldso_preset="preset=0"
         EuRoc_files=data_Path
 
-        cmd = ldso+" "+ldso_preset+ldso_mode \
-        +" files="+EuRoc_files+"/mav0/cam0/"
+        cmd = ldso+" "+ldso_preset+" files="+EuRoc_files+"/mav0/cam0/"
         #os.system("echo "+"'"+cmd+"' >> "+ldso_Path+"/bin/EuRoc.sh")
         time1=time.time()
         os.system(cmd)
